@@ -43,7 +43,7 @@ const extendTimeoutMiddleware = (req, res, next) => {
                 // Wait another 15 seconds
                 waitAndSend();
             }
-        }, 15000);
+        }, 5000);
     };
 
     waitAndSend();
