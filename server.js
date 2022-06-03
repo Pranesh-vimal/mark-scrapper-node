@@ -5,6 +5,7 @@ const rp = require("request-promise");
 const cheerio = require("cheerio");
 require("dotenv").config();
 const morgan = require("morgan");
+const extendTimeoutMiddleware = require("./middleware/extendTimeoutMiddleware");
 
 app.use(express.json());
 
@@ -85,7 +86,9 @@ app.use(function (req, res, next) {
     res.status(404).json({
         error: "Not Found",
     });
-})
+});
+
+app.use(extendTimeoutMiddleware);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
