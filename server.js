@@ -71,6 +71,7 @@ app.post("/api/upload", async (req, res) => {
                 //handle error
             });
         result.push(marks);
+        console.log(marks);
     }
 
     res.status(200).json({
