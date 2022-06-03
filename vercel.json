@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "name": "mark-scrapper-node",
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/server.js"
+        }
+    ]
+}

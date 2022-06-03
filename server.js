@@ -8,6 +8,8 @@ const morgan = require("morgan");
 const extendTimeoutMiddleware = require("./middleware/extendTimeoutMiddleware");
 const api = require("./routes/api");
 
+var port = process.env.PORT || 8000;
+
 app.use(express.json());
 
 app.use(
@@ -29,6 +31,6 @@ app.use(function (req, res, next) {
 
 app.use(extendTimeoutMiddleware);
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
