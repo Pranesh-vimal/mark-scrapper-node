@@ -17,6 +17,10 @@ app.use(
 
 app.use(morgan("dev"));
 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
+
 app.post("/api/upload", async (req, res) => {
     const { data, rollNoColumn, nameColumn, dobColumn } = req.body;
 
