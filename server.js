@@ -69,7 +69,7 @@ app.post("/api/upload", async (req, res) => {
                     }
                 }
 
-                var gradeTable = $("table:last-child");
+                var gradeTable = $("table:contains('Grade Points Average (GPA): ')");
                 var tr = gradeTable.find("tr > th > font > font");
                 marks['GPA'] = tr.eq(0).text();
                 marks['CGPA'] = tr.eq(1).text();
